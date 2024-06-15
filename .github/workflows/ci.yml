@@ -5,7 +5,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - master
+      - master # 注意，这里是master，一定要看好是master还是main，否则不会触发事件！！！
 
 # 任务
 jobs:
@@ -21,7 +21,7 @@ jobs:
 
       # 生成静态文件
       - name: Build
-        run: npm install && npm run docs:build
+        run: npm install && npm run build:win
 
       # 部署到 GitHub Pages
       - name: Deploy
